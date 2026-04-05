@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 app.get("/", (req, res) => {
-  res.status(200).send("API is running");
+  res.redirect(302, "/api-docs");
 });
 
 app.get("/health", (req, res) => {
