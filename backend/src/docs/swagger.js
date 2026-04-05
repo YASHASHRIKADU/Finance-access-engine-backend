@@ -1,5 +1,10 @@
 const swaggerJSDoc = require("swagger-jsdoc");
 
+const baseServerUrl =
+  process.env.API_BASE_URL ||
+  process.env.RENDER_EXTERNAL_URL ||
+  `http://localhost:${process.env.PORT || 5000}`;
+
 const swaggerDefinition = {
   openapi: "3.0.0",
   info: {
@@ -9,7 +14,7 @@ const swaggerDefinition = {
   },
   servers: [
     {
-      url: "http://localhost:5000"
+      url: baseServerUrl
     }
   ],
   components: {
